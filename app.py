@@ -14,7 +14,7 @@ model.load_model("artifacts/model.json")
 with open(FEATURES_PATH, "r") as f:
     features = json.load(f)["features"]
 
-st.title("🚴 Bike Sharing Demand Prediction (Week 7 Demo)")
+st.title("🚴 Bike Sharing Demand Prediction")
 
 st.write("Move the sliders / choose values to predict the number of bike rentals (cnt).")
 
@@ -91,3 +91,4 @@ df = pd.DataFrame([input_data]).reindex(columns=features)
 if st.button("🔮 Predict Bike Demand"):
     prediction = model.predict(df)[0]
     st.success(f"Predicted Bike Count: {prediction:.0f}")
+
